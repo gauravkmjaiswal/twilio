@@ -1,0 +1,21 @@
+#numb{
+    margin-top:20%;
+    margin-left: 27%;
+    font-size: 25px;
+}
+#msg{
+    font-size: 25px;
+}
+#send{
+    margin-left:46%;
+    margin-top: 2%;
+    font-size: 25px;
+}
+.info{
+    margin-top: 4%;
+ margin-left: 32%;
+    font-size: 25px;
+}
+*{
+    background-image: url('red_simple_dots_texture_pattern_background-wallpaper-1366x768.jpg');
+}
