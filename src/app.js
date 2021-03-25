@@ -6,9 +6,7 @@ const express=require('express')
 const path=require('path')
 const app=express()
 var twilio = require('twilio');
-
-
-
+const { DocumentPermissionContext } = require('twilio/lib/rest/preview/sync/service/document/documentPermission');
 
 const authToken=process.env.TWILIO_TOKEN
 const accountSid=process.env.TWILIO_ACCOUNT_SID
@@ -23,10 +21,10 @@ app.use(express.urlencoded({extended:false}))
 app.use(express.static(static_path));
 
 
-app.set("views",static_path);
+// app.set("views",static_path);
 app.get('/', function (req, res) {
 
-  res.render("index")
+  // res.render("index")
 })
 app.post('/',async (req,res)=>{
 try{
@@ -38,8 +36,7 @@ try{
              body: `${req.body.msg}`,
              to: `whatsapp:+91${req.body.numb}`
            })
-       console.log(client_msg.body)
-
+       console.log(client_msg.sid)
 
 
     res.render("msg.html")
@@ -47,6 +44,7 @@ try{
 }catch
 {
     // res.status(400).send("Messege send")
+    console.log(well Done)
 }
 
  
